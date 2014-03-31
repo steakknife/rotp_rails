@@ -1,0 +1,18 @@
+<table class='qrcode'>
+  <tr>
+    <% qrcode.modules.each_index do |h| %>
+      <th class='qrcode'></th>
+    <% end %>
+  </tr>
+  <% qrcode.modules.each_index do |y| %>
+    <tr>
+      <% qrcode.modules.each_index do |x| %>
+        <% if qrcode.dark?(x, y) %>
+          <td class='qrcode x'/>
+        <% else %>
+          <td class='qrcode'/>
+        <% end %>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

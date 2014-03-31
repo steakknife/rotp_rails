@@ -1,0 +1,6 @@
+RotpRails.config do |config|
+  config.default_secret_attribute_name = <%= default_secret_attribute_name %> # defaults to :rotp_secret
+  config.default_issuer = <%= default_issuer %>       # top line of google authenticator
+  config.default_label  = <%= default_label %>        # bottom line of google authenticator
+  #  %n for name field, %e for email field, %% for %
+end

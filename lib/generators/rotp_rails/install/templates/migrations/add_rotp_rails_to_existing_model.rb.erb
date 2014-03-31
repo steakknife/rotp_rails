@@ -1,0 +1,5 @@
+class AddRotpRailsTo<%= table_name.camelize %> < ActiveRecord::Migration
+  def change
+    add_column :<%= table_name %>, :<%= default_secret_field %>, :string
+  end
+end
