@@ -1,0 +1,11 @@
+<h1>User enrolled in Google Authenticator.</h1>
+
+<h2>QR Code:</h2></br>
+<%= render partial: 'qrcode', object: @user.rotp_qrcode %>
+
+<h2>Manual token:</h2></br>
+<div class='manual-token'>
+  <%= @user.rotp_secret_pretty %>
+</div>
+
+<%= render 'form_actions' %>

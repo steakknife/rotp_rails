@@ -1,0 +1,5 @@
+This will enroll your user into Google Authenticator.
+
+<%= form_for @user, url: enroll_user_path(@user), method: :post do |f| %>
+  <%= f.submit %>
+<% end %>

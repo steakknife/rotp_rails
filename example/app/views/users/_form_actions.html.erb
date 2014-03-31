@@ -1,0 +1,7 @@
+<% if @user.rotp_enrolled? %>
+  <%= link_to 'Test Code Validation', validate_user_path(@user) %> |
+  <%= link_to 'Unenroll', unenroll_user_path(@user) %>
+<% else %>
+  <%= link_to 'Enroll', enroll_user_path(@user) %>
+<% end %> |
+<%= link_to 'Back', users_path %>

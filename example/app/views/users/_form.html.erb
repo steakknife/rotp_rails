@@ -1,0 +1,9 @@
+<%= form_for(@user) do |f| %>
+  <%= render 'form_errors' %>
+  <div class="fields">
+    Name: <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

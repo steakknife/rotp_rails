@@ -1,0 +1,39 @@
+<h1>Listing users</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Rotp secret</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.rotp_secret %></td>
+        <td><%= render(partial: 'qrcode', object: user.rotp_qrcode) if user.rotp_secret %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user.rotp_enrolled? %>
+          <td><%= link_to 'Test Code Validation', validate_user_path(user) %></td>
+          <td><%= link_to 'Unenroll', enroll_user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+          <td></td>
+          <td><%= link_to 'Enroll', enroll_user_path(user) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>
