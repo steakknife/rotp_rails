@@ -13,7 +13,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
-gem 'rotp_rails', git: 'file:///Users/bmf/Projects/foo/rotp_rails'
+gem 'rotp_rails', github: 'steakknife/rotp_rails'
 
 group :doc do
   gem 'sdoc', require: false
